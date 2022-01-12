@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-nginx-qx92zw
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-qx92zw
+  namespace: my-nginx-qx92zw
+  labels:
+    name: nginx-qx92zw
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx-qx92zw
+  template:
+    metadata:
+      namespace: my-nginx-qx92zw
+      labels:
+        name: nginx-qx92zw
+    spec:
+      containers:
+      - name: nginx-qx92zw
+        image: nginx
+        ports:
+        - containerPort: 80
+
