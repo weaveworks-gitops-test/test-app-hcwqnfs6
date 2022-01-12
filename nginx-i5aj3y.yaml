@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: my-nginx-i5aj3y
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-i5aj3y
+  namespace: my-nginx-i5aj3y
+  labels:
+    name: nginx-i5aj3y
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: nginx-i5aj3y
+  template:
+    metadata:
+      namespace: my-nginx-i5aj3y
+      labels:
+        name: nginx-i5aj3y
+    spec:
+      containers:
+      - name: nginx-i5aj3y
+        image: nginx
+        ports:
+        - containerPort: 80
+
