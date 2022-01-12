@@ -1,0 +1,9 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+metadata:
+  name: test-app-hcwqnfs6
+  namespace: wego-system
+resources:
+- app.yaml
+- test-app-hcwqnfs6-gitops-deploy.yaml
+- test-app-hcwqnfs6-gitops-source.yaml
